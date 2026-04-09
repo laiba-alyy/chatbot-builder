@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  backend-jenkins:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && node server.js"
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./chatbot-builder-backend:/app
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://laibaali3892_db_user:laibiatlas123@ac-gluj7lo-shard-00-00.jpnefx3.mongodb.net:27017,ac-gluj7lo-shard-00-01.jpnefx3.mongodb.net:27017,ac-gluj7lo-shard-00-02.jpnefx3.mongodb.net:27017/?ssl=true&replicaSet=atlas-vj6m24-shard-0&authSource=admin&appName=Cluster0
+      - FRONTEND_URL=http://13.60.64.162
+    container_name: backend-jenkins-container
+
+  frontend-jenkins:
+    image: nginx:alpine
+    ports:
+      - "8001:80"
+    volumes:
+      - ./chatbot-builder-frontend/dist:/usr/share/nginx/html
+      - ./chatbot-builder-frontend/nginx.conf:/etc/nginx/conf.d/default.conf
+    container_name: frontend-jenkins-container
+
+volumes:
+  db_jenkins_data:
