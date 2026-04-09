@@ -1,0 +1,1 @@
+router.get('/test', (req, res) => res.json({ message: 'Training route is working!' }));

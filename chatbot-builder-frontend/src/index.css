@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --bg-deep: #0b0e14;
+  --bg-accent: #1a1f2c;
+  --glow-purple: rgba(138, 43, 226, 0.4);
+  --glow-blue: rgba(0, 191, 255, 0.25);
+  --grid-color: rgba(255, 255, 255, 0.03);
+}
+
+/* light theme overrides */
+.theme-light {
+  --bg-deep: #f5f5f5;
+  --bg-accent: #ffffff;
+  --grid-color: rgba(0,0,0,0.05);
+  color: #0a0a1a;
+}
+
+/* dark theme explicit (same as default) */
+.theme-dark {
+  /* no changes; kept for symmetry */
+}
+
+/* system theme switches automatically via media query */
+@media (prefers-color-scheme: light) {
+  .theme-system {
+    --bg-deep: #f5f5f5;
+    --bg-accent: #ffffff;
+    --grid-color: rgba(0,0,0,0.05);
+    color: #0a0a1a;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .theme-system {
+    /* same as dark */
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-deep);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --------------------- */
+/* 1. Main Gradient Background */
+.neural-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, var(--bg-accent) 0%, var(--bg-deep) 100%);
+  z-index: -3;
+  overflow: hidden;
+}
+
+/* --------------------- */
+/* 2. Animated Neural Grid (diagonal movement) */
+.neural-bg::before {
+  content: "";
+  position: absolute;
+  inset: -150%; /* Large for smooth movement */
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: rotateX(60deg) translateY(0);
+  animation: gridMove 25s linear infinite;
+  z-index: -2;
+  opacity: 0.7;
+}
+
+/* --------------------- */
+/* 3. Glowing Particles (Soft Orbs / Floating) */
+.neural-bg::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: 
+    radial-gradient(circle at 20% 30%, var(--glow-purple) 0%, transparent 15%),
+    radial-gradient(circle at 80% 70%, var(--glow-blue) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 25%);
+  filter: blur(80px);
+  animation: pulseGlow 12s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+/* --------------------- */
+/* Animations */
+
+
+
+
+/* Optional: Smooth scroll content over background */
+* {
+  scroll-behavior: smooth;
+}

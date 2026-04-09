@@ -1,0 +1,64 @@
+/* Full Page Overlay */
+.loader-fullpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Loader Wrapper Styles */
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Size Variants */
+.loader-wrapper.small .loader-dots span { width: 8px; height: 8px; }
+.loader-wrapper.medium .loader-dots span { width: 12px; height: 12px; }
+.loader-wrapper.large .loader-dots span { width: 18px; height: 18px; }
+
+/* The Dots Container */
+.loader-dots {
+  display: flex;
+  gap: 8px;
+}
+
+/* Individual Dot Styling & Animation */
+.loader-dots span {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loader-dots span:nth-child(2) { animation-delay: 0.15s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.3s; }
+.loader-dots span:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 0.4;
+  }
+}
+
+/* Message Text */
+.loader-message {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5568;
+  margin: 0;
+  letter-spacing: 0.5px;
+}

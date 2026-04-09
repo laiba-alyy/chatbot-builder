@@ -1,0 +1,233 @@
+/* ========================================
+   CARD BASE STYLES
+======================================== */
+
+.card {
+  background: white;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Card Hover Effect */
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Shadow */
+.card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-shadow.card-hover:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Border */
+.card-bordered {
+  border: 2px solid #e2e8f0;
+}
+
+/* Clickable Card */
+.card-clickable {
+  cursor: pointer;
+}
+
+/* ========================================
+   CARD PADDING VARIANTS
+======================================== */
+
+.card-padding-small {
+  padding: 16px;
+}
+
+.card-padding-medium {
+  padding: 24px;
+}
+
+.card-padding-large {
+  padding: 32px;
+}
+
+.card-padding-none {
+  padding: 0;
+}
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: #718096;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ========================================
+   CARD BODY
+======================================== */
+
+.card-body {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   CARD FOOTER
+======================================== */
+
+.card-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ========================================
+   CARD VARIANTS
+======================================== */
+
+/* Primary Card */
+.card-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.card-primary .card-title,
+.card-primary .card-subtitle,
+.card-primary .card-body {
+  color: white;
+}
+
+.card-primary .card-footer {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Success Card */
+.card-success {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+}
+
+/* Danger Card */
+.card-danger {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+}
+
+/* Warning Card */
+.card-warning {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+/* Info Card */
+.card-info {
+  background-color: #d1ecf1;
+  border-left: 4px solid #17a2b8;
+}
+
+/* ========================================
+   CARD WITH IMAGE
+======================================== */
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-image-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 0;
+}
+
+/* For cards with no padding and image on top */
+.card-padding-none .card-image-top {
+  margin-bottom: 0;
+}
+
+.card-padding-none .card-body {
+  padding: 24px;
+}
+
+.card-padding-none .card-footer {
+  padding: 0 24px 24px 24px;
+  margin-top: 0;
+}
+
+/* ========================================
+   CARD GRID LAYOUT
+======================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-padding-large {
+    padding: 20px;
+  }
+
+  .card-padding-medium {
+    padding: 16px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-padding-medium {
+    padding: 12px;
+  }
+
+  .card-padding-large {
+    padding: 16px;
+  }
+}
