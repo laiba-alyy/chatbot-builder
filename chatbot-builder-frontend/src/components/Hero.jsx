@@ -31,7 +31,7 @@ const Hero = () => {
           </h1>
           <p>
             Build Complex AI Agents in Minutes, Not Months.
-            The No-Code Engine for High-Performance Industry AI. Build Fast without any coding 
+            The No-Code Engine for High-Performance Industry AI. Build chatbots for your businesses and webistes in minutes without any coding 
           </p>
           <div className="hero-btns">
             <button className="btn-main">Get Started Free</button>
