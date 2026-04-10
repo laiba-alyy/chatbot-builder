@@ -30,8 +30,8 @@ const Hero = () => {
             <span className="cursor">|</span>
           </h1>
           <p>
-            Deploy custom-trained chatbots for E-commerce, Real Estate, or SaaS 
-            in seconds. Cut coding time by 90% with our drag-and-drop AI engine.
+            Build Complex AI Agents in Minutes, Not Months.
+            The No-Code Engine for High-Performance Industry AI.
           </p>
           <div className="hero-btns">
             <button className="btn-main">Get Started Free</button>
