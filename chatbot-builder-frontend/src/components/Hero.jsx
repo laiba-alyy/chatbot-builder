@@ -30,7 +30,7 @@ const Hero = () => {
             <span className="cursor">|</span>
           </h1>
           <p>
-            Build Powerful AI Agents in Minutes — No Coding Required
+            Build Bots wihout coding 
           </p>
           <div className="hero-btns">
             <button className="btn-main">Get Started Free</button>
