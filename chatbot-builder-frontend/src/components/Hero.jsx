@@ -30,8 +30,7 @@ const Hero = () => {
             <span className="cursor">|</span>
           </h1>
           <p>
-            Build Complex AI Agents in Minutes, Not days!
-            The No-Code Engine for High-Performance Industry AI. Build chatbots for your businesses and webistes in minutes without any coding 
+            Build Powerful AI Agents in Minutes — No Coding Required
           </p>
           <div className="hero-btns">
             <button className="btn-main">Get Started Free</button>
